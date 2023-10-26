@@ -1,0 +1,37 @@
+body {
+    padding: 1rem;
+}
+.SearchBar {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.SearchInput {
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    border-color: #E1E1E1;
+    width: 14rem;
+    height: 2rem;
+    margin-right: -1rem;
+   
+}
+
+.img__Avatar {
+    border-radius: 50%;
+   height: 3rem;
+   width: 3rem;
+   margin-left: 15rem;
+   margin-top: -2.5rem;
+}
+
+.searchIcon {
+    height: 5vh;
+    width: 5vw;
+    z-index: 1000;
+    color: black;
+    margin-left: -13rem;
+    margin-bottom: -0.8rem;
+    //background: url('.././assets/Icons/search.svg') no-repeat top left;
+    
+}
