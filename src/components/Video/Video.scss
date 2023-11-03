@@ -1,12 +1,37 @@
 .video {
-    height: 5rem;
-    width: 5rem;
+    height: 15rem;
+    width: 40rem;
    
 }
 
 .mainVideo {
   
-    height: 5rem;
-    width: 5rem;
+    height: 15rem;
+    width:40rem;
     
+}
+
+
+
+source.currentVideo__Img {
+    height: 15rem;
+    width:40rem;
+}
+
+
+
+.div__MainVideo {
+    background-color: black;
+    height: 15rem;
+   width: 100vw;
+}
+
+.Video {
+    width: 20vw;
+    height: 5vh;
+    z-index: 1000%;
+}
+
+h1 {
+    margin-top: 3rem;
 }

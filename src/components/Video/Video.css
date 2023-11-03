@@ -1,9 +1,14 @@
 .video {
-  height: 5rem;
-  width: 5rem;
+  height: 15rem;
+  width: 40rem;
 }
 
 .mainVideo {
-  height: 5rem;
-  width: 5rem;
+  height: 15rem;
+  width: 40rem;
+}
+
+source.currentVideo__Img {
+  height: 15rem;
+  width: 40rem;
 }/*# sourceMappingURL=Video.css.map */
