@@ -1,10 +1,10 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Page from './pages/Page/Page.js';
 
-import { BrowserRouter } from 'react-router-dom'
 
 {/*render(
 
@@ -21,10 +21,20 @@ root.render(
 
 
   <BrowserRouter>
-    <App />
+  
+     <Page/>
+    
+     <Routes>
+    
+     </Routes>
+  
+   
   </BrowserRouter>,
 
 )
+
+
+
 
   // );
 

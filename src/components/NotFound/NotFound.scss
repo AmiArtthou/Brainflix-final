@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+* {
+ 
+}
+
+
+
+
+
+.div__Body {
+    align-items: center; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 15%;
+    margin: auto;
+    margin-top: -8rem;
+    background: content-box radial-gradient(crimson, lime);
+}
+
+
+
+.div__Body > * {
+    align-items: center; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 5%;
+    margin: auto;
+}
+
+
+
+.ElfImg {
+    margin-left: 5rem;
+    width: 65%;
+    height: 65%;
+    border-radius: 8rem;
+    margin-top: 2rem;
+}
+    
+    .winnerImg {
+        margin-left: 9rem;
+        margin-top: -1rem;
+        margin-bottom: 2rem;
+        width: 50%;
+        height: 50%;
+        border-radius: 20rem;
+    animation: rotation 10s infinite linear;
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+    }
+     
+
+
+
+.error, .function {
+    color: black;
+    margin: auto;
+  
+
+
+}
+
+.error  {
+ 
+        -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+        font-size: 4em;
+      
+        display: inline-block;
+      
+        animation: waviy 1s infinite;
+        animation-delay: calc(.1s * var(--i));
+        
+      
+      @keyframes waviy {
+        0%,40%,100% {
+          transform: translateY(0)
+        }
+        20% {
+          transform: translateY(-20px)
+        }
+      }
+    }
+
+      .error {
+        animation: rotation 10s infinite linear;
+        margin-left: 3rem;
+    
+    
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+    }
+}
+
+
+
+
+
+
+

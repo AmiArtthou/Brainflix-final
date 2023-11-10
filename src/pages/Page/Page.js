@@ -1,35 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-//import { link } from 'react-router-dom';
-//import HomePage from '../../App.js';
-import VideoDetails from '../../App.js';
+import { Link } from 'react-router-dom';
 import VideoUpload from '../VideoUpload/VideoUpload.js';
-import App from './../App.js';
+import '../VideoUpload/VideoUpload.scss';
+import App from '../../App.js';
+import UploadButton from '../../components/UploadButton/UploadButton.js';
+import NavBar from '../../components/NavBar/navBar.js';
+import SearchBar from '../../components/SearchBar/SearchBar.js';
+import NotFound from '../../components/NotFound/NotFound.js';
+import '../../components/NavBar/NavBar.scss';
+import '../../app.scss';
 
 function Page() {
 
-    //const params = useParams(); https://refine.dev/blog/react-router-useparams/#conclusion
+    const { id } = useParams();
 
     return (
+      <div>
+        
+
+        <Routes>
+        <Route path="/" exact element={<App />}/>
       
-<BrowserRouter>
-<App />
-<Routes>
-{/*<Route exact path="/" element={<HomePage />}>
+        <Route path="/VideoDetails/:id/*" element={<App />}/>
+        <Route path="/VideoUpload" element={<VideoUpload />}/>
+        <Route path='*' element={<NotFound />}/>
+        
+        </Routes>
 
-    </Route>*/}
-{/*//:video.id*/}
-<Route path="VideoDetails/:id" element={<VideoDetails />}></Route> {/*find out how to assign the video ID to the URL - dynamic URL*/} 
+</div>
 
-<Route path="VideoUpload" element={<VideoUpload />}></Route> {/* on click event or link tag on upload button */}
+    )
 
-{/*<Route path="home" element={<Navigate to='/' />}></Route> ??? how does this work. useNavigate*/}
-{/*<Route path="*" element={<NotFound />}></Route> <-- extra if have time... */}
-</Routes>
 
-  </BrowserRouter>
- 
-    );
 }
 export default Page;

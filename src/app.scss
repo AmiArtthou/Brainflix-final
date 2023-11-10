@@ -1,5 +1,102 @@
-.div__Body {
-margin: auto;
-justify-content: center;
+//@use "styles/partials/variables" as *;
+//@use "styles/partials/mixins" as *;
+
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+  }
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+  }
+  
+  $tablet-breakpoint: 768px;
+  $desktop-breakpoint: 1280px;
+
+.body__App {
+    padding: 1rem;
+
+
+    @include tablet {
+
+    }
+
+    @include desktop {
+// display: flex;
+// flex-direction: column; 
+//     }
+}
 }
 
+// .div__Body {
+    
+// margin: auto;
+// justify-content: center;
+// background-color: black;
+// }
+
+// .container {
+//     display: flex;
+//     flex-direction: row; 
+// }
+
+// .div__sub-Body {
+
+//     @include desktop {
+//     display: flex; 
+//     flex-direction: row; 
+
+//     }
+// }
+
+// .div__sub-Body {
+
+//     @include desktop {
+//         display: flex;
+      
+//     }
+// }
+
+.row__comments-and-VideoList {
+
+    @include desktop {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        //flex-wrap: wrap;
+    }
+}
+
+// .row__comments-and-VideoList > * {
+
+//     @include desktop {
+//         display: flex;
+//         flex-direction: row;
+//     }
+// }
+
+
+
+// .MainVideo {
+
+//     @include desktop {
+
+//     }
+// }
+
+.CommentSection {
+
+    @include desktop {
+width: 20%;
+    }
+}
+
+.VideoList {
+
+    @include desktop {
+width: 20%;
+    }
+}

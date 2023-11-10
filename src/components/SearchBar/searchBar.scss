@@ -1,19 +1,75 @@
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+  }
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+  }
+  
+  $tablet-breakpoint: 768px;
+  $desktop-breakpoint: 1280px;
+
+
 body {
     padding: 1rem;
 }
+
 .SearchBar {
     display: flex; 
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 0vh;
+    margin-left: 1vw;
+
+    @include tablet {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -9vh;
+    margin-left: 24vw;
+  
+   
+   
+   
+    }
+
+    @include desktop {
+        margin-top: -8vh;
+    margin-left: 40vw;
+
+    }
 }
 
 .SearchInput {
     border: 1px solid black;
     border-radius: 0.2rem;
     border-color: #E1E1E1;
-    width: 14rem;
-    height: 2rem;
-    margin-right: -1rem;
+    width: 50vw;
+    height: 6vh;
+    margin-left: 1vw;
+    font-size: 1rem;
+
+    @include tablet {
+        border: 1px solid black;
+        border-radius: 0.2rem;
+        border-color: #E1E1E1;
+        width: 30vw;
+        height: 3rem;
+        margin-right: -1rem;
+        font-size: 1rem;
+        margin-top: 1.5vh;
+
+
+    }
+
+    @include desktop {
+        margin-top: 0.5vh;
+        width: 24vw;
+    }
+   
    
 }
 
@@ -21,17 +77,55 @@ body {
     border-radius: 50%;
    height: 3rem;
    width: 3rem;
-   margin-left: 15rem;
-   margin-top: -2.5rem;
+   margin-left: auto;
+
+  margin-top: 0.2vh;
+ 
+
+  @include tablet {
+  
+    margin-right: -1vw;
+  
+    margin-top: 1.1rem;
+   
+
+  }
+
+  @include desktop {
+    margin-top: 2vh;
+    margin-right: 2vw;
+  }
+}
+
+.div__SearchInput {
+    position: relative;
+    display: flex;
 }
 
 .searchIcon {
-    height: 5vh;
+   // height: 5vh;
+   position: absolute;
+   height: 3vh;
     width: 5vw;
     z-index: 1000;
     color: black;
-    margin-left: -13rem;
-    margin-bottom: -0.8rem;
-    //background: url('.././assets/Icons/search.svg') no-repeat top left;
+
+   margin-left: 2vw;
+   
+
+    margin-top: 2vh;
+  
     
+@include tablet {
+    margin-left: 1vw;
+    margin-top: 3.5vh;
+
+    
+}
+
+@include desktop {
+    margin-left: 0vw;
+    margin-top: 2.5vh;
+}
+
 }

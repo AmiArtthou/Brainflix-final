@@ -1,11 +1,123 @@
-/*.videoList__Image {
-    height: 3rem;
-    width: 3rem;
-}*/
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+  }
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+  }
+  
+  $tablet-breakpoint: 768px;
+  $desktop-breakpoint: 1280px;
 
-/*.video {
-    height: 10rem; 
-    width: 10rem;
-}*/
+//doesn't do anything 
+// .videoList__Image {
+// height: 10rem;
+//      width: 10rem;
+
+//      @include desktop {
+//         width: 2rem;
+//         height: 2rem;
+//      }
+// }
+
+//doesn't do amything 
+// .video {
+//   height: 5rem; 
+//      width: 5rem;
+//  }
 
 
+.link__video-List {
+    text-decoration: none;
+
+    @include desktop {
+        margin-top: -14rem;
+        border-left: 2px solid #E1E1E1;
+        //padding-left: 0.1rem;
+        //padding-top: 0.2rem;
+        margin-left: 0rem;
+    }
+}
+
+.video-List {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    //border-top: 2px solid #E1E1E1;
+    margin-top: 1rem;
+    
+}
+
+.video {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: -17vh;
+
+    @include desktop {
+font-size: 0.8rem;
+margin-top: -1rem;
+    }
+}
+
+
+.videoList__Image {
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    width: 25%;
+    height: 40%;
+
+    @include desktop {
+        width: 15%;
+        height: 30%;
+        border-radius: 0.3rem;
+        margin-top: 1rem;
+        margin-right: 0.9rem;
+    }
+   
+    
+}
+
+
+.video__Label {
+    text-decoration: none;
+    width: 100%;
+    color: #AFAFAF;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 4vh;
+    margin-left: 4vw;
+    margin-top: 4vh;
+
+    @include desktop {
+        margin-left: 0.9rem;
+        margin-top: 0.1rem;
+        margin-bottom: 1rem;
+    }
+    
+ 
+   // margin-bottom: 1rem;
+}
+
+.video__Text {
+    color: #323232;
+    text-decoration: none;
+    width: 35%;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+.text__Channel {
+    font-weight: 400;
+}
+
+
+.link__Video {
+    text-decoration: none;
+
+}

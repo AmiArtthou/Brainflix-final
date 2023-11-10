@@ -1,8 +1,327 @@
-input.CommentBox {
-    width: 15rem;
-    height: 20rem;
-    margin-left: 2rem;
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+  }
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+  }
+  
+  $tablet-breakpoint: 768px;
+  $desktop-breakpoint: 1280px;
+
+
+
+  .div__Comments {
+    // margin-left: 6rem;
+    margin-left: auto;
+    margin-bottom: 2rem;
+
+    @include desktop {
+        font-size: 0.8rem;
+        line-height: 0.1rem;
+    }
+   
+  
+   
+   }
+
+  
+ 
+   .div__comment--Form {
+     //border-bottom: 2px solid #E1E1E1;
+     padding-bottom: 2rem;
+     margin-bottom: 1rem;
+     border-bottom: 2px solid #E1E1E1;
     
+   }
+ 
+   .div__commentsForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @include desktop {
+        margin-bottom: -3.5rem;
+     }
+    
+}
+
+ 
+ //////////////
+
+
+ .commentForm {
+   
+
+    @include tablet {
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    }
+}
+
+.comment__Box {
+    font-family: Avenir;
+    font-size: 1rem;
+    color: #323232;
+    background-color: #FAFAFA;
+    textarea: {
+        color: #323232;
+    }
+    width: 75%;
+    height: 10rem;
+    margin-top: -2.5rem;
+    border: 2px solid #E1E1E1;
+    resize: none;
+    border-radius: 0.4rem;
+ 
+   // margin-left: 4rem;
+   
+
+// input.CommentBox {
+//     width: 15rem;
+//     height: 20rem;
+//     margin-left: 2rem;
+   
+
+    
+
+// }
+
+    @include tablet {
+
+        width: 40%;
+        height: 6vh;
+        margin-top: 2vh;
+        margin-left: 3vw;
+    //    margin-right: -5rem;
+    //    padding-right: -5rem;
+    margin-bottom: -2rem;
+       
+    }
+
+    @include desktop {
+         position: relative;
+        height: 3rem;
+        width: 50%;
+       //margin: initial;
+      
+      bottom: 4rem;
+        margin-left: -0.8rem;
+    }
+
+}
+
+.comment__Button {
+    background-color: #0095FF;
+    height: 3rem;
+    width: 75%;
+   justify-content: center; 
+   text-align: center; 
+    border: none;
+    border-radius: 0.3rem;
+    margin-left: 4rem;
+    margin-right: 15rem;
+    //margin-left: 6rem;
+    position: relative;
+
+    @include tablet {
+        width: 25vw;
+        height: 7vh;
+        padding-right: 6rem;
+     
+        margin-left: 65vw;
+        margin-top: -4rem;
+       
+      
+    }
+
+    @include desktop {
+      //margin: initial;
+      bottom: 3rem;
+      margin-left: initial;
+      margin-left: 27rem;
+      width: 10rem;
+      height: 2.4rem;
+    }
+    
+}
+
+.comment__Img {
+
+    @include tablet {
+margin-left: -1rem;
+margin-top: 0.5rem;
+margin-right: 1rem;
+    }
+
+    @include desktop {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+.span__Comment {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    @include tablet {
+      
+        position: absolute;
+        top: 1rem;
+       
+
+    }
+
+    @include desktop {
+        font-size: 0.8rem;
+        right: 2.5rem;
+        
+    }
+
+}
+
+.img__Avatar {
+    border-radius: 50%;
+   height: 3rem;
+   width: 3rem;
+   margin-left: auto;
+ 
+  margin-top: 0.2vh;
  
 
+  @include tablet {
+  
+    margin-right: -1vw;
+   
+    margin-top: 1.1rem;
+    
+    margin-bottom: -2rem;
+   
+
+  }
+
+  @include desktop {
+    margin-top: 1rem;
+ margin-bottom: 2rem;
+    margin-right: 2vw;
+    
+  }
+}
+
+img {
+    margin-left: -5rem;
+    margin-right: 5rem;
+   
+}
+
+
+
+.comment__Header {
+
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.2rem;
+
+
+  
+}
+
+
+.comment__Label {
+    margin-left: 4rem;
+    color: #AFAFAF;
+    font-weight: bold;
+
+    @include desktop {
+      
+      
+    }
+   
+}
+
+
+
+
+.videoComments {
+    color: #323232;
+    line-height: 1.5rem;
+  
+   
+}
+
+.comment__Comment {
+    margin-left: 5rem;
+    margin-top: -1rem;
+ 
+}
+
+.comment__Name {
+    font-weight: bold;
+ 
+
+}
+
+.comment__Timestamp {
+    margin-left: auto;
+    color: #AFAFAF;
+
+    @include desktop {
+        margin-right: 1rem;
+    }
+}
+
+.commentName--Timestamp {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+}
+
+.dot__Name {
+    display: flex;
+    
+}
+
+.dot {
+  margin-right: 2rem;
+  margin-top: 1rem;
+    height: 50px;
+    width: 50px;
+    background-color: #E1E1E1;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.existingComment {
+    border-bottom: 2px solid #E1E1E1;
+   padding-bottom: 1rem;
+}
+
+.div__Comments {
+    @include desktop {
+        width: 50%;
+    }
+}
+
+// .div__commentsForm {
+    
+//     @include desktop {
+//         width: 20%;
+//     }
+// }
+
+.comment__Box {
+
+    @include desktop {
+        width: 40%;
+        height: 2rem;
+       font-size: 0.8rem;
+    }
 }

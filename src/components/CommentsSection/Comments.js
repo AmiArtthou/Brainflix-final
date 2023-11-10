@@ -1,162 +1,105 @@
 import AddCommentImg from '../../assets/Icons/add_comment.svg';
-import React, { useState } from 'react';
-import Comments from "../../data/video-details.json";
-import App from '../../App.js'; //test imports
-
-/*TESTimport AddCommentImg from '../../assets/Icons/add_comment.svg';
-import React, { useState } from 'react';
-import Comments from "../../data/video-details.json";
-import App from '../../App.js';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import AvatarImg from '../../assets/images/Mohan-muruge.jpg';
+import App from '../../App';
+import '../../app.scss';
 
 
-function CommentSection() {
+const formatTimestamp = (timestamp) => {
+  const date = new Date(timestamp);
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
 
-  
-  const [currentVideoComments, setCurrentVideoComments] = useState(Comments.comments);
+  return `${day}/${month}/${year}`;
+};
+
+
+function CommentSection({ comments }) {
+  const [currentVideoComments, setCurrentVideoComments] = useState([]);
   const [newComment, setNewComment] = useState('');
-  
+
+  useEffect(() => {
+    setCurrentVideoComments(comments || []);
+  }, [comments]);
+
   const commentsSubmit = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
 
     if (newComment.trim() !== '') {
-     
-      const timestamp = new Date().toJSON(); 
+      //const timestamp = new Date().toJSON();
 
-    
-      const allComments = [
-        ...currentVideoComments, newComment, //?
+      const currentDate = new Date();
+const day = currentDate.getDate();
+const month = currentDate.getMonth() + 1; 
+const year = currentDate.getFullYear();
+
+const formattedTimestamp = `${day}/${month}/${year}`;
+
+console.log(formattedTimestamp);
+
+
+      const updatedComments = [
+        ...currentVideoComments,
         {
+          name: 'Ami Massarella', 
+          timestamp: formattedTimestamp,
           comment: newComment,
-          timestamp: timestamp,
         },
       ];
 
- 
-      setCurrentVideoComments(allComments);
-
-   
+      setCurrentVideoComments(updatedComments);
       setNewComment('');
     }
+
   };
+  
 
+  return (
+    <div className="div__Comments">
+      <div className="div__comment--Form">
+        <p className="comment__Header">{currentVideoComments.length} Comments</p>
 
-    return (
-      <div>
-      <div>
-        <p>3 Comments</p>
-         {/*<p>{currentVideoComments.length.toString()}</p>*/
-         {/*<p>{(currentVideoComments ? currentVideoComments.length : 0) + (newComment ? newComment.length : 0)}</p>*/}
-
-        /*TEST<label>JOIN THE CONVERSATION</label>
+        <label className="comment__Label">JOIN THE CONVERSATION</label>
+        <div className="div__commentsForm">
         <form className="CommentForm" onSubmit={commentsSubmit}>
-        <textarea className="CommentBox" 
-        type="text" 
-        value={newComment}
-        onChange={(event) => setNewComment(event.target.value)}
-        placeholder="Add a new comment"
-        />
+          <img className="img__Avatar" src={AvatarImg} alt="User Avatar" />
+         
+          
+          <textarea
+            className="comment__Box"
+            type="text"
+            value={newComment}
+            onChange={(event) => setNewComment(event.target.value)}
+            placeholder="Add a new comment"
+          />
 
-        <button type="submit">
-          <img src={AddCommentImg} alt="add comment button"/>
+
+          <button className="comment__Button" type="submit">
+            <img className="comment__Img"src={AddCommentImg} alt="add comment button" />
+            <span className="span__Comment">COMMENT</span>
           </button>
-      </form>
+        </form>
         </div>
+      </div>
 
-        {/*separate div for pre-existing comments*/
-        /*TEST<div className="videoComments">
-        {Comments.map((comment, index) => (
-<div key={index} className="existingComment">
-<p>{comment.timestamp}</p>
-  <p>{comment.name}</p>
-  <p>{comment.comment}</p>
-  </div>
-  
-
+      <div className="videoComments">
+        {currentVideoComments.map((comment, index) => (
+          <div key={index} className="existingComment">
+           <div className="dot__Name"><span class="dot"></span><div className="commentName--Timestamp">
+            <p className="comment__Name">{comment.name}</p></div>
+            <p className="comment__Timestamp">{formatTimestamp(comment.timestamp)}</p>
+            </div>
+            <p className="comment__Comment">{comment.comment}</p>
+          
+          </div>
         ))}
-
-        </div>
-        </div>
-    
-    );
-  }
-  
-  export default CommentSection;*/
-
-//TEST: //
+      </div>
+    </div>
+  );
+}
 
 
 
-
-function CommentSection() {
-
-  
-  const [currentVideoComments, setCurrentVideoComments] = useState(Comments.comments);
-  const [newComment, setNewComment] = useState('');
-  
-  const commentsSubmit = (event) => {
-    event.preventDefault(); 
-
-    if (newComment.trim() !== '') {
-     
-      const timestamp = new Date().toJSON(); 
-
-    
-      const allComments = [
-        ...currentVideoComments, newComment, //?
-        {
-          comment: newComment,
-          timestamp: timestamp,
-        },
-      ];
-
- 
-      setCurrentVideoComments(allComments);
-
-   
-      setNewComment('');
-    }
-  };
-
-
-    return (
-      <div>
-      <div>
-        <p>3 Comments</p>
-         {/*<p>{currentVideoComments.length.toString()}</p>*/}
-         {/*<p>{(currentVideoComments ? currentVideoComments.length : 0) + (newComment ? newComment.length : 0)}</p>*/}
-
-        <label>JOIN THE CONVERSATION</label>
-        <form className="CommentForm" onSubmit={commentsSubmit}>
-        <textarea className="CommentBox" 
-        type="text" 
-        value={newComment}
-        onChange={(event) => setNewComment(event.target.value)}
-        placeholder="Add a new comment"
-        />
-
-        <button type="submit">
-          <img src={AddCommentImg} alt="add comment button"/>
-          </button>
-      </form>
-        </div>
-
-        {/*separate div for pre-existing comments*/}
-        <div className="videoComments">
-        {Comments.map((comment, index) => (
-<div key={index} className="existingComment">
-<p>{comment.timestamp}</p>
-  <p>{comment.name}</p>
-  <p>{comment.comment}</p>
-  </div>
-  
-
-        ))}
-
-        </div>
-        </div>
-    
-    );
-  }
-  
-  export default CommentSection;
-
+export default CommentSection;

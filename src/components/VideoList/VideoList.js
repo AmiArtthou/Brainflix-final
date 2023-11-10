@@ -1,93 +1,38 @@
-import videoListData from "../../data/videos.json";
 import React, { useState } from 'react';
-import MainVideo from '../Video/Video.js';
-import App from '../../App.js';
-//import setDeleteVideo from '../../App.js';
-import CurrentVideo from "../../data/video-details.json";
 import { Link } from 'react-router-dom';
-
-//TESTconst deleteVideo = videoListData 
-
-//function videoList() {
-
-    //const [currentVideo, setCurrentVideo] = useState(video[0]);
-
-  //  return (
-
-   // )
-  
-//}
-
-//deleteVideo, setDeleteVideo, VideoToDelete
+import { useParams } from 'react-router-dom';
+import '../../app.scss';
 
 
-//onClick2={() => VideoClick2(getVideoDetails(video.id))}
+
+function VideoList({ videoListData }) { 
 
 
-function VideoList({ videoListData, VideoClick }) {
-  // original
-  // const getVideoDetails = (videoId) => {
-  //   const selectedVideo = CurrentVideo.find((video) => video.id === videoId);
-  //   return selectedVideo;
-  // }
-
-  //test
+  const { id } = useParams();
   const getVideoDetails = (videoId) => {
-    const selectedVideo = CurrentVideo.find((video) => video.id === videoId);
-  
-  //NOV 3 TEST  const deleteVideo = videoListData.filter((video) => video.id !== VideoClick);
-  
+    videoListData.find((video) => video.id === videoId);
   
 
-//KAIlet {data} = (selectedVideo) => {
-  //return selectedVideo;
-//KAI}
-
-//}
-//{detailedData}
-
-    // invoke data function as props.data(selectedVideo);
-    // prop.data(selectedVideo)
-
-    return selectedVideo;
+    return getVideoDetails;
     
-    //<div>
-      // <App selectedVideo={selectedVideo}/>
-    //</div>
   }
 
 
-  const videoClickResult = (video) => {
-    VideoClick(video);
-    const detailedData = videoListData.filter((vid) => vid.id !== video.id);
-    VideoClick(detailedData);
-  }; //necessary?
-
-
-
   return (
-    <div className="video-List">
-
-       {/* <ul>
-<li><link to="/" >Home</link></li>
-<li><link></link> </li>
-<li><link></link></li>
-
-    </ul>*/}
+    <Link to="/" className="link__video-List"><div className="video-List">
      
-    <label>NEXT VIDEOS</label>
+    <label className="video__Label">NEXT VIDEOS</label>
 
       {videoListData.map((video) => (
-        <div key={video.id} className="video" onClick={() => VideoClick(getVideoDetails(video.id))}> {/* link tags around div*/}{/*onClick2={() => VideoClick2(getVideoDetails(video.id))}*/ }
-        <img className="videoList__Image" src={video.image} alt={video.title} width="50%" height="50%" />
-          <h3>{video.title}</h3>
-          <h3>{video.channel}</h3>
-        </div>
+        <Link to={`/VideoDetails/${video.id}`} key={video.id} className="link__Video"><div  className="video" > 
+       <img className="videoList__Image" src={video.image} alt={video.title} />
+          <div className="video__Text"><h3>{video.title}</h3>
+          <h3 className="text__Channel">{video.channel}</h3></div>
+          
+        </div></Link>
       ))}
-    </div>
+    </div></Link>
   );
 }
 
 export default VideoList; 
-
-//VideoToDelete();

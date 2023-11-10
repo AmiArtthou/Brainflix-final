@@ -5,9 +5,16 @@ import UploadImg from "../../assets/Icons/upload.svg";
 
 function UploadButton() {
     return (
-        <div>
-       {/*} <link to="video upload page" >*/}<img src={UploadImg} className="Upload__Img" alt="Upload Video button" /> {/*</link> */}
+
+       
+        <Link to="/VideoUpload"> <div className="div__Upload">
+        <div className="UploadButton">
+            
+       
+       <img src={UploadImg} className="Upload__Img" alt="Upload Video button" /> {/*</link> */}
+        <span className="div__text">UPLOAD</span> 
         </div>
+        </div></Link>
     );
 }
 

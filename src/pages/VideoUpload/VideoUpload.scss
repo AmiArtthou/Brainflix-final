@@ -1,0 +1,391 @@
+//@use ".././styles/partials/variables.scss" as *;
+//@use ".././styles/partials/mixins.scss" as *;
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+  }
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+  }
+  
+  $tablet-breakpoint: 768px;
+  $desktop-breakpoint: 1280px;
+
+  .div__VideoUpload {
+    font-family: Avenir;
+    color: #323232;
+
+  }
+
+.div__ButtonPublish {
+    margin: auto;
+    width: 100%;
+       height: 4rem;
+       background-color: #0095FF;
+       margin-left: 0rem;
+       margin-top: -4rem;
+       bottom: -4rem;
+       margin-bottom: 5rem;
+       border-radius: 0.3rem;
+       position: relative;
+       justify-content: center;
+       align-content: center; 
+       align-items: center; 
+
+       @include tablet {
+        width: 15%;
+        margin-left: 65%;
+        height: 2.4rem;
+       }
+
+       @include desktop {
+        width: 10%;
+        margin-left: 76%;
+        height: 2rem;
+       }
+     
+       
+}
+
+.buttonPublish__Img {
+    width: 2rem;
+    height: 2rem;
+    padding: 1rem;
+    margin: auto;
+ 
+    border-radius: 0.3rem;
+
+    @include tablet {
+        position: relative;
+        top: -0.5rem;
+        left: -0.5rem;
+        width: 1rem;
+        height: 1rem;
+    }
+
+    @include desktop {
+        position: relative;
+    top: -0.5rem;
+    left: -0.5rem;
+    width: 1rem;
+    height: 1rem;
+    }
+}
+
+.publish__Text {
+    position: absolute;
+    color: #FAFAFA;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-align: center;
+   // text-align: center; 
+   // justify-content: center;
+    margin-left: 30%;
+    margin-right: 25%;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    @include tablet {
+      //  margin-left: 37%;
+      margin-left: -1.8rem;
+      font-size: 0.8rem;
+    }
+
+    @include desktop {
+        margin-left: -1.2rem;
+        font-size: 0.8rem;
+
+    }
+}
+
+.div__Form {
+//    background-color: black;
+
+
+@include desktop {
+    display: flex;
+    
+} 
+
+@include desktop {
+    margin-left: -17rem;
+    margin-top: -4.5rem;
+    //margin-left: -10rem;
+    margin-right: 3rem;
+    width: 70%;
+   // height: 50%;
+}
+}
+
+.div__Publish {
+position: relative;
+}
+
+label {
+    margin-left: 4rem;
+}
+
+textarea {
+    font-family: Avenir;
+    font-size: 1rem;
+    margin-left: 4rem;
+    width: 75%;
+    height: 10rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border: 2px solid #E1E1E1;
+    resize: none;
+    border-radius: 0.4rem;
+
+    @include tablet {
+      margin-right: 8rem;
+      margin-left: 8rem;
+
+    }
+}
+
+.title__Box {
+    height: 3rem;
+    background-color: #FAFAFA;
+
+    @include tablet {
+        margin-left: 2.2rem;
+        
+    }
+
+    @include desktop {
+        margin-top: 0.3rem;
+        height: 2rem;
+        border-radius: 0.2rem;
+        font-size: 0.8rem;
+    }
+   
+   
+}
+
+.div__Cancel {
+    color: #0095FF;
+    margin-bottom: -5rem;
+    text-decoration: none;
+   align-items: center;
+  justify-content: center;
+   text-align: center;
+   font-size: 1.2rem;
+   font-weight: 600;
+
+   @include tablet {
+    margin-top: -2.6rem;
+    margin-left: -4rem;
+    font-size: 0.8rem;
+   }
+
+   @include desktop {
+    margin-top: -2.6rem;
+    margin-left: 28rem;
+    font-size: 0.8rem;
+   }
+}
+
+.link__Cancel {
+    text-decoration: none;
+}
+
+.span__Cancel {
+    text-decoration: none;
+    
+   
+  
+}
+
+.form__Upload {
+    margin-top: 2rem;
+
+    @include tablet {
+        position: relative;
+
+    }
+}
+
+.video__Thumbnail {
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+
+    @include tablet {
+        margin-top: -2rem;
+
+    }
+
+    @include desktop {
+     
+        right: -5rem;
+       margin-left: 5rem;
+    }
+}
+
+.img__Thumbnail {
+    width: 90%; 
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 2rem;
+
+    @include tablet {
+        width: 35%; 
+        height: 35%;
+        margin-left: 2rem;
+    }
+
+    @include desktop {
+        width: 32%; 
+        height: 75%;
+        margin-left: 8rem;
+        margin-top: 1.3rem;
+        margin-bottom: 2.2rem;
+
+    }
+
+}
+
+h1 {
+    font-family: Avenir;
+    color: #323232;
+    font-weight: 900;
+ 
+    font-size: 2.4rem;
+    border-top: 2px solid #E1E1E1;
+    //border-width: 100%;
+    padding-top: 2rem;
+    margin-top: 1rem;
+    border-bottom: 2px solid white;
+
+    @include tablet {
+        margin-top: -2rem;
+        margin-left: 2.6rem;
+        border-bottom: 2px solid #E1E1E1;
+        margin-bottom: 4rem;
+    }
+
+    @include desktop {
+       font-size: 1.5rem;
+       margin-top: initial;
+       margin-top: -6rem;
+       padding-top: initial;
+       padding-top: 1rem;
+       padding-bottom: initial;
+       padding-bottom: 1rem;
+       margin-left: 18rem;
+      //border-length: 10%;
+
+    }
+
+}
+
+.label__Thumbnail {
+   top: 0rem;
+    position: absolute;
+    text-align: left;
+    left: -0.5rem;
+    color: #AFAFAF;
+    font-size: 1.2rem;
+    font-weight: bold;
+    // position: relative;
+    // margin-top: 1rem;
+ // justify-content: center; 
+    // align-items: center;
+
+    @include tablet {
+        margin-left: 2.8rem;
+       
+    }
+
+    @include desktop {
+        margin-left: 8.5rem;
+        font-size: 0.8rem;
+       //padding-bottom: -1rem;
+       
+    }
+}
+
+.label__Title {
+    position: relative;
+margin-top: 1rem;
+color: #AFAFAF;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    @include tablet {
+        margin-left: 2.2rem;
+    }
+
+    @include desktop {
+        font-size: 0.8rem;
+        // margin-bottom: initial;
+        // margin-bottom: 0.3rem;
+    }
+
+}
+
+.label__Description {
+    color: #AFAFAF;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    @include tablet {
+        position: absolute;
+        left: -1.9rem;
+        bottom: 13rem;
+       
+    }
+
+    @include desktop {
+        font-size: 0.8rem;
+        margin-bottom: -6rem;
+
+    }
+}
+
+.box__Description {
+
+    background-color: #FAFAFA;
+
+    @include tablet {
+        position: relative;
+        margin-left: 2rem;
+        
+    }
+
+    @include desktop {
+        border-radius: 0.2rem;
+        height: 4rem;
+        margin-top: 0rem;
+        font-size: 0.8rem;
+        //margin-top: 1rem;
+    }
+}
+
+.div__Row {
+
+    @include tablet {
+        border-bottom: 2px solid #E1E1E1;
+        margin-bottom: 2rem;
+    }
+    
+
+    @include desktop {
+        display: flex; 
+        flex-direction: row;
+        
+        
+    }
+}
